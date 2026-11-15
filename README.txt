@@ -1,61 +1,96 @@
-<h1>Java Mystery Escape</h1>
+# 🔐 Java Mystery Escape
 
-<p>An interactive text-based escape room game written in Java, featuring multiple rooms, polymorphic puzzle types, custom exceptions, hints, and a persistent high-score manager.</p>
+An interactive, text-based escape room game developed in **Java**. Solve puzzles, uncover hidden clues, and unlock doors to escape through three challenging rooms!
 
-<hr>
+## 🎮 Features
 
-<h2>Features</h2>
+- **Polymorphic Puzzles:** Three different puzzle types — `RiddlePuzzle`, `NumberPuzzle`, and `CodeLockPuzzle` — inherit from an abstract `Puzzle` base class.
+- **Dynamic Levels:** Explore three rooms with increasing difficulty and decreasing attempts:
+  - Study Room
+  - Old Library
+  - Secret Vault
+- **Clue Tracking & Door Codes:** Solve all puzzles in each room to collect clue digits. Combine them in the correct order to unlock the door.
+- **In-Game Commands:**
+  - `hint` – Get a hint at the cost of points.
+  - `clues` – View collected clue digits.
+  - `quit` – Exit the game.
+- **High Score System:** Automatically saves and loads the top 5 scores using file handling.
+- **Custom Exception Handling:** Uses custom checked exceptions to handle invalid answers and game-over conditions.
 
-<ul>
-    <li><strong>Polymorphic Puzzles:</strong> Includes word riddles, number/sequence problems, and Java-specific technical questions (<code>RiddlePuzzle</code>, <code>NumberPuzzle</code>, <code>CodeLockPuzzle</code>) inheriting from an abstract <code>Puzzle</code> base class[cite: 1].</li>
-    <li><strong>Dynamic Levels:</strong> Progress through 3 distinct rooms (Study Room, Old Library, and Secret Vault) with decreasing attempt counts and increasing difficulty[cite: 1].</li>
-    <li><strong>Clue Tracking & Door Codes:</strong> Solve all puzzles in a room to collect clue digits in order, then combine them to unlock the room door[cite: 1].</li>
-    <li><strong>In-Game Commands:</strong> Type <code>hint</code> (costs points), <code>clues</code> (lists collected clues), or <code>quit</code> at any time[cite: 1].</li>
-    <li><strong>High Scores:</strong> Automatically saves and loads the top 5 scores using local file handling (<code>ScoreManager</code>)[cite: 1].</li>
-</ul>
+## 📁 Project Structure
 
-<hr>
+```text
+Java-Mystery-Escape/
+│
+├── Main.java
+├── Game.java
+├── Player.java
+├── Room.java
+├── ScoreManager.java
+│
+├── Puzzle.java
+├── RiddlePuzzle.java
+├── NumberPuzzle.java
+├── CodeLockPuzzle.java
+│
+├── Hintable.java
+│
+├── GameOverException.java
+├── InvalidAnswerException.java
+│
+└── README.md
+```
 
-<h2>Project Structure</h2>
+## 🛠️ Concepts Used
 
-<h3>Core Logic & Execution</h3>
-<ul>
-    <li><strong><code>Main.java</code></strong> - Entry point that launches the game[cite: 1].</li>
-    <li><strong><code>Game.java</code></strong> - Core game loop, level generation, and command handler[cite: 1].</li>
-</ul>
+This project demonstrates several core Java programming concepts:
 
-<h3>Entities & Data</h3>
-<ul>
-    <li><strong><code>Player.java</code></strong> - Manages player name, score, hints used, and inventory[cite: 1].</li>
-    <li><strong><code>Room.java</code></strong> - Manages room details, puzzles, and door lock verification[cite: 1].</li>
-    <li><strong><code>ScoreManager.java</code></strong> - Handles loading, sorting, and saving top scores to text[cite: 1].</li>
-</ul>
+- Object-Oriented Programming (OOP)
+- Abstraction
+- Inheritance
+- Polymorphism
+- Interfaces
+- Exception Handling
+- File Handling
+- Collections and Sorting
+- Loops and Conditional Statements
 
-<h3>Puzzles & Interfaces</h3>
-<ul>
-    <li><strong><code>Puzzle.java</code></strong> - Abstract base class defining shared puzzle logic[cite: 1].</li>
-    <li><strong><code>RiddlePuzzle.java</code></strong> - Word riddle implementation[cite: 1].</li>
-    <li><strong><code>NumberPuzzle.java</code></strong> - Math and sequence puzzle implementation[cite: 1].</li>
-    <li><strong><code>CodeLockPuzzle.java</code></strong> - Java technical question implementation[cite: 1].</li>
-    <li><strong><code>Hintable.java</code></strong> - Interface for entities that provide hints[cite: 1].</li>
-</ul>
+## 🚀 How to Compile and Run
 
-<h3>Exception Handling</h3>
-<ul>
-    <li><strong><code>GameOverException.java</code></strong> - Custom checked exception for game over / quit conditions[cite: 1].</li>
-    <li><strong><code>InvalidAnswerException.java</code></strong> - Custom checked exception for malformed user inputs[cite: 1].</li>
-</ul>
+### Prerequisites
+- Java Development Kit (JDK) installed.
+- A terminal or command prompt.
 
-<hr>
+### Steps
 
-<h2>How to Compile and Run</h2>
+**1. Clone the repository**
 
-<ol>
-    <li>Open your terminal or command prompt and navigate to the folder containing all the source files[cite: 1].</li>
-    <li>Compile all Java files together[cite: 1]:
-        <pre><code>javac *.java</code></pre>
-    </li>
-    <li>Run the game using the <code>Main</code> class[cite: 1]:
-        <pre><code>java Main</code></pre>
-    </li>
-</ol>
+```bash
+git clone <your-repository-link>
+```
+
+**2. Navigate to the project directory**
+
+```bash
+cd Java-Mystery-Escape
+```
+
+**3. Compile all Java files**
+
+```bash
+javac *.java
+```
+
+**4. Run the game**
+
+```bash
+java Main
+```
+
+## 🏆 Objective
+
+Escape all three rooms by solving puzzles, collecting clue digits, and unlocking each door. Use hints wisely, manage your attempts, and aim for the highest score!
+
+---
+
+**Developed with Java ☕**
